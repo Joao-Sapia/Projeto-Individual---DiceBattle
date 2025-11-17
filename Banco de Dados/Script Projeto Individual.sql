@@ -3,7 +3,6 @@ USE DiceBattle;
 
 CREATE TABLE usuario(
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(45),
     usuario VARCHAR(45),
     email VARCHAR(45),
     senha CHAR(8)
@@ -79,9 +78,9 @@ CREATE TABLE acaoBonus(
 )AUTO_INCREMENT = 1;
 
 
-INSERT INTO usuario(Nome, Usuario, Email, Senha) VALUES
-('Matheus', 'Matheus_Panela', 'MatheusSantos@gmail.com',69692070),
-('Giovanna','Gikarika','GiovannaJamarino@gmail.com',22022007);
+INSERT INTO usuario(Usuario, Email, Senha) VALUES
+('Matheus_Panela', 'MatheusSantos@gmail.com',69692070),
+('Gikarika','GiovannaJamarino@gmail.com',22022007);
                 
 INSERT INTO ficha(Nome, Classe, fkUsuario) VALUES
 ('Jin Too', 'Arqueiro', 1),
@@ -99,11 +98,10 @@ INSERT INTO acaoPrincipal(Nome, Acerto, RolagemDano, fkFicha) VALUES
 ('Arco Curto',11,6,1),
 ('Manopla Apex',11,12,2),
 ('Katana Tomioka',15,12,3),
-('0',0,0,4);
+('Espada Longa',15,20,4);
                 
 INSERT INTO acaoBonus(Nome, RolagemCura, fkFicha) VALUES
 ('Carga de Sangue',70,1),
 ('Totalidade do Corpo',51,2),
 ('Segundo Folego',10,3),
 ('Segundo Folego',10,4);
-

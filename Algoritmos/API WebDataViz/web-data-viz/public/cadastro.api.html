@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | DiceBattle</title>
+</head>
+<body>
+    <h3>Usuário</h3>
+    <input type="text" placeholder="Nome de Usuário" id="iptUsuario"> <br>
+    <h3>Email</h3>
+    <input type="text" placeholder="Seu Email" id="iptEmail"> <br>
+    <h3>Senha</h3>
+    <input type="password" placeholder="Sua Senha" id="iptSenha"> <br> <br>
+    <button onclick="Confirmar()">Confirmar</button>
+
+    <div id="divMsg"></div>
+</body>
+</html>
+<script>
+  function Confirmar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var usuario = iptUsuario.value;
+    var email = iptEmail.value;
+    var senha = iptSenha.value;
+    var mensagem = "";
+
+    if (usuario == "" || email == "" || senha == "") {
+        mensagem = `Todos os campos devem estar preenchidos`;
+
+    divMsg.innerHTML = mensagem;
+    return false;
+    } 
+    
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+
+
+            usuarioServer: usuario,
+            emailServer: email,
+            senhaServer: senha,
+        }),
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        
+        if (resposta.ok) {
+            
+            divMsg.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            
+            setTimeout(() => {
+                window.location = "login.html";
+            }, "2000");
+            
+        } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+    })
+    .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+    
+    return false;
+}
+</script>

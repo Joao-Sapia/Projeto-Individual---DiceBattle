@@ -18,6 +18,11 @@ CREATE TABLE batalha(
                 REFERENCES usuario (idUsuario)
 )AUTO_INCREMENT = 1;
 
+CREATE TABLE historico(
+	idHistorico INT PRIMARY KEY AUTO_INCREMENT,
+    dtHistorico DATE 
+    )AUTO_INCREMENT = 1;
+
 CREATE TABLE registro(
     idRegistro INT PRIMARY KEY AUTO_INCREMENT,
     Atacante VARCHAR(45),
@@ -27,9 +32,12 @@ CREATE TABLE registro(
     fkBatalha INT,
         CONSTRAINT fkRegistroBatalha
             FOREIGN KEY (fkBatalha)
-                REFERENCES batalha (idBatalha)
+                REFERENCES batalha (idBatalha),
+	fkHistorico INT,
+        CONSTRAINT fkRegistroHistorico
+            FOREIGN KEY (fkHistorico)
+                REFERENCES historico (idHistorico)
 )AUTO_INCREMENT = 1;
-
 
 CREATE TABLE ficha(
     idFicha INT PRIMARY KEY AUTO_INCREMENT,
@@ -94,6 +102,11 @@ INSERT INTO statusF(Força, Destreza, Constituicao, Inteligencia, Sabedoria, Car
 (5,2,2,2,0,4,197,3),
 (6,2,4,-3,2,3,205,4);
                 
+INSERT INTO historico(dtAcademia) VALUES
+("17-01-1997"),
+("24-11-2018"),
+("09-02-2025");
+
 INSERT INTO acaoPrincipal(Nome, Acerto, RolagemDano, fkFicha) VALUES
 ('Arco Curto',11,6,1),
 ('Manopla Apex',11,12,2),
@@ -105,3 +118,5 @@ INSERT INTO acaoBonus(Nome, RolagemCura, fkFicha) VALUES
 ('Totalidade do Corpo',51,2),
 ('Segundo Folego',10,3),
 ('Segundo Folego',10,4);
+
+SELECT * FROM usuario;

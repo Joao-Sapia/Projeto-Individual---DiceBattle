@@ -1,47 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTF-8">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | DiceBattle</title>    
+    <title>Cadastro | DiceBattle</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kotta+One&display=swap');
+    </style>
 </head>
 <body>
-    <class class="header">
-        <class class="container">
-            <class class="navbar">
-            <navbar>
-                <class class="titulo">
-                    <h2>DiceBattle</h2>
-                </class>
-                <class class="login">
-                    <h4>Login</h4>
-                </class>
-                <class class="cadastro">
-                    <h4>Cadastre-se</h4>
-                </class>
-            </navbar>
-            </class>
-        </class>
-    </class>
-    <class class="container">
-            <div class="boxCadastro">
-                <class class="tituloBox">
-                    <h4>Cadastro</h4>
-                </class>
-                <class class="usuario">
-                    <h5>Usuario</h5> <br>
-                    <input type="text"> <br> <br>
-                </class>
-                <class class="email"> 
-                    <h5>Email</h5> <br>
-                    <input type="text"> <br> <br>
-                </class>
-                <class class="senha">
-                    <h5>Senha</h5> <br>
-                    <input type="password"> <br> <br>                
-                </class>
-                <class class="botãoCadastro">
-                    <button onclick="Confirmar()" >Confirmar</button>
-                </class>
-            </div>
-    </class>
+    <header class="header">
+        <h1>DiceBattle</h1>
+        <ul class="outras-abas">
+            <li><a href=""></a>Login</li>
+            <li><a href=""></a>Cadastre-se</li>
+        </ul>
+    </header>
+    <div class="boxCadastro">
+        <h4>Cadastro</h4>
+        <h5>Usuário</h5>
+        <input type="text" placeholder="Nome de Usuário" id="iptUsuario">
+        <h5>Email</h5>
+        <input type="text" placeholder="Seu Email" id="iptEmail">
+        <h5>Senha</h5>
+        <input type="password" placeholder="Sua Senha" id="iptSenha">
+        <button onclick="Confirmar()">Confirmar</button>
+    </div>
+    <div id="divMsg"></div>
+</body>
+</html>
+<script>
+  function Confirmar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var usuario = iptUsuario.value;
+    var email = iptEmail.value;
+    var senha = iptSenha.value;
+    var mensagem = "";
+
+    if (usuario == "" || email == "" || senha == "") {
+        mensagem = `Todos os campos devem estar preenchidos`;
+
+    divMsg.innerHTML = mensagem;
+    return false;
+    } 
+    
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+
+
+            usuarioServer: usuario,
+            emailServer: email,
+            senhaServer: senha,
+        }),
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
+        
+        if (resposta.ok) {
+            
+            divMsg.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+            
+            setTimeout(() => {
+                window.location = "login.html";
+            }, "2000");
+            
+        } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+    })
+    .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+    
+    return false;
+}
+</script>

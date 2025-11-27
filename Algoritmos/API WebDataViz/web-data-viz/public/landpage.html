@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiceBattle</title>
+    <link rel="stylesheet" href="landpage.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kotta+One&display=swap');
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>DiceBattle</h1>
+        <ul class="outras-abas">
+            <li><a id="login" href="login.html"></a>Login</li>
+            <li><a id="cadastro" href="cadastro.html"></a>Cadastre-se</li>
+        </ul>
+    </header>
+    <div class="container1">
+        <h1>Sejam Bem Vindos</h1>
+        <div class="box1">
+            <h3>O que é DiceBattle?</h3>
+            <p>RPG significa Role Playing Gaming, um jogo onde
+                você cria um personagem com base no sistema de D&D,
+                define os status, habilidades e história de um personagem.
+                Depois disso você é livre para interpretar o seu personagem 
+                junto de um Mestre que é quem narra o mundo e define a história
+                que acontece ao seu redor.</p>
+            <button id="login2">Começar a aventura</button>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="box2">
+            <h3>Conheça mais sobre RPG de Mesa D&D</h3>
+        </div>
+        <div class="box3">
+
+        </div>
+    </div>
+    <div class="container3">
+        <div class="bannerAutor">
+            <h2>Sobre o Autor</h2>
+        </div>
+        <div class="box4">
+            <img src="">
+        </div>
+        <div class="box5">
+            <h3>Por que é importante para mim</h3>
+        </div>
+        <div class="box6">
+            <p>Lorem Ipsum</p>
+        </div>
+    </div>
+    <div class="container4">
+        <div class="bannerPersonagem"></div>
+            <h3>Meus Personagens</h3>
+                <div class="Alex" onclick="ToqueAlex()">
+                    <h4>Alex</h4>
+                    <img src="Imagens/Alex King.png" alt="FotoAlex" width="150">
+                </div>
+                <div class="Lexi" onclick="ToqueLexi()">
+                    <h4>Lexi</h4>
+                    <img src="Imagens/Lexi.png" alt="FotoLexi" width="150">
+                </div>
+                <div class="Felix" onclick="ToqueFelix()">
+                    <h4>Felix</h4>
+                    <img src="" alt="FotoFelix" width="150">
+                </div>
+                <div class="Jin" onclick="ToqueJin()">
+                    <h4>Jin</h4>
+                    <img src="Imagens/Jin.png" alt="FotoJin" width="150">
+                </div>
+                <div class="Silver" onclick="ToqueSilver()">
+                    <h4>Silver</h4>
+                    <img src="Imagens/Bella Noir.png" alt="FotoSilver" width="150">
+                </div>
+                <div class="Desmond" onclick="ToqueDesmond()">
+                    <h4>Desmond</h4>
+                    <img src="Imagens/Desmond.jpg" alt="FotoDesmond" width="150">
+                </div>
+                <div class="bannerGrandePersonagem">
+                    <div class="BannerPersonagemEscolhido" id="divPersonagem">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const login2 = document.getElementById('login2') 
+    login2.addEventListener('click', () => {setTimeout(() => {window.location.href = 'login.html'}, 1000);
+    })
+    /*const login = document.getElementById('login') 
+    login.addEventListener('click', () => {setTimeout(() => {window.location.href = 'login.html'}, 1000);
+    })
+    const cadastro = document.getElementById('cadastro') 
+    cadastro.addEventListener('click', () => {setTimeout(() => {window.location.href = 'cadastro.html'}, 1000);
+    })*/
+   function ToqueAlex(){
+        mensagem =`
+        <h3>Nome:</h3>
+        <p>Alex King</p>
+        <h3>Historia:</h3>
+        <p>Um jovem escritor, que sai em aventura á procura de sua namorada que some misteriosamente. 
+            Durante o caminho aprende magia e se torna um forte guerreiro, acaba se unindo a um grupo chamado GreenSpirit!</p>
+        <img src="Imagens/Alex King.png" alt="FotoAlex" width="250">`
+    divPersonagem.innerHTML = mensagem;
+    }
+    function ToqueLexi(){
+        mensagem =`
+        <h3>Nome:</h3>
+        <p>Lexi</p>
+        <h3>Historia:</h3>
+        <p>Uma garota fada que misteriosamente aparece em uma vila incinerada. 
+            Não entende o mundo onde está parece até uma criança sem conhecimento do mundo, encontra um Samurai e o segue como sua discipula. 
+            No meio das suas aventuras explorando o mundo lutando como seu machado de barabara, 
+            mas com os movimentos leves de um monge nisso conheçe um grupo que a acolhe como família o GreenSpirit</p>
+        <img src="Imagens/Lexi.png" alt="FotoLexi" width="250">`
+    divPersonagem.innerHTML = mensagem;
+    }
+    function ToqueFelix(){
+        mensagem =`
+        <h3>Nome:</h3>
+        <p>Felix Felicious</p>
+        <h3>Historia:</h3>
+        <p>Um tiferino com pele azulada, um tanto incomum para sua espécie. 
+            Raptado junto de seu amigo durante a infância, almeja se tornar um grande arqueiro como aqueles que o salvaram. 
+            Muito tempo se passa e ele finalmente se forma e pega sua primeira missão, que diria que ele se tornaria um representante do Deus da natureza, 
+            e misturaria sua arquearia com magias de um druida e se tornando tão forte ao ponto de criar o grupo tão grande e famoso chamado GreenSpirit</p>
+        <img src="" alt="FotoFelix" width="250">`
+    divPersonagem.innerHTML = mensagem;
+    }
+    function ToqueJin(){
+        mensagem =`
+        <h3>Nome:</h3>
+        <p>Sung Jint Too</p>
+        <h3>Historia:</h3>
+        <p>Um passado tragico envolvendo um demonio que destruiu sua vila e roubou suas emoções. 
+            Ele conhece Tom Ulkerny aquele que viraria seu melhor amigo e que juntos se tornariam uma dupla imbatível, no meio do caminho deixou a vingança para trás junto da necromancia.
+            Virou o melhor ladino de toda agúa profunda e conseguiu ser o chefe da maior guilda de mercenários a Zhentarim!</p>
+        <img src="Imagens/Jin.png" alt="FotoJin" width="250">`
+    divPersonagem.innerHTML = mensagem;
+    }
+    function ToqueSilver(){
+        mensagem =`
+        <h3>Nome:</h3>
+        <p>Silver Ulkerny</p>
+        <h3>Historia:</h3>
+        <p>Com memórias embaçadas tudo que se recorda é de ser cria do Divino, perdeu seu marido para um evento que assolou até os Deuses a "lua vermelha". 
+            Enlouquecida pelo luto foi expulsa do cargo de Deusa da lua e se tornou um anjo caido, virando a grande daedra da loucura Bella Noir. 
+            Anos se passaram desde sua queda porém o encontro com um certo grupo a mudou, ela voltou a amar Tom Ulkerny o humano que a moldou, 
+            com o tempo ela se arrependeu de seus atos de loucura e procurou a mudança se tornando uma monge e resolveu até seu nome mudar de Bella Noir a louca, 
+            para Silver que significa Prata</p>
+        <img src="Imagens/Bella Noir.png" alt="FotoSilver" width="250">`
+    divPersonagem.innerHTML = mensagem;
+    }
+    function ToqueDesmond(){
+        mensagem =`
+        <h3>Nome:</h3>
+        <p>Desmond Ulkerny</p>
+        <h3>Historia:</h3>
+        <p>Um pequeno garoto nascera como escravo, até seus 15 anos tudo que fizera era servir seu amo. 
+            Um dia certo grupo composto por pessoas estranhas surgiu e libertou todos os escravos daqueles senhorios horríveis, 
+            o menino foi acolhido pelo grupo e se tornou um grande guerreiro. 
+            Demorou demais para aprender a tomar suas próprias decições mas um bravo guerreiro o adotou e o ensinou não apenas á lutar, mas como amar. 
+            Desmond cresceu e se tornou um grande Samurai e ele pra sempre se lembrará de amado pai Tom Ulkerny</p>
+        <img src="Imagens/Desmond.jpg" alt="FotoDesmond" width="250">`
+    divPersonagem.innerHTML = mensagem;
+    }
+</script>

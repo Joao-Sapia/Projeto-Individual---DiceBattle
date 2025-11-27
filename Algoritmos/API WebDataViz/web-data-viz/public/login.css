@@ -1,0 +1,63 @@
+body{
+    margin: 0px;
+    font-family: "Kotta One", serif; 
+    background-image: url("Imagens/BrigaTaverna.jpg");
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    padding: 0px 30px;
+    color: #FFFFFF;
+    background-color: #8C3A2E;
+}
+.header h1{
+    font-weight: normal;
+    margin: 0px;
+}
+.outras-abas{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    gap: 50px;
+    text-decoration: underline;
+}
+.boxLogin{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 50px;
+    margin-top: 150px;
+    border-radius: 25px;
+    font-size: 30px;
+    color: #FFFFFF;
+    background-color: #4A2E1A;
+}
+
+input{
+    border-radius: 15px;
+    padding: 15px 120px;
+    margin-bottom: 30px;
+    margin: 0px;
+    background-color: #F2D6A2;
+}
+button{
+    border-radius: 15px;
+    padding: 10px 100px;
+    margin-top: 80px;
+    background-color: #8C3A2E;
+}
+h5{
+    display: flex;
+    justify-self: left;
+    align-items: end;
+    font-weight: normal;
+    margin: 10px;
+}
+h4{
+    display: flex;
+    font-weight: normal;
+    margin: 30px;
+}

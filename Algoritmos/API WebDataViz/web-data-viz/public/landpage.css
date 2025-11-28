@@ -6,6 +6,7 @@ body{
     display: flex;
     align-items: center;
     padding: 0px 30px;
+    font-size: 30px;
     background-color: #8C3A2E;
     color: #FFFFFF;
     justify-content: space-between;
@@ -30,6 +31,7 @@ body{
     height: 500px;
     align-items: center;
 }
+
 .box1{
     display: flex;
     flex-direction: column;
@@ -37,6 +39,12 @@ body{
     width: 60%;
     height: 80%;   
     text-align: justify;
+    margin-top: 60px
+
+}
+button{
+    display: flex;
+    background-color: #8C3A2E;
 }
 .container2{
     display: flex;
@@ -105,9 +113,13 @@ body{
     border-radius: 15px;
     justify-content: center;
 }
-.bannerPersonagem{
-    display: flex;
-}
 .container4{
     display: flex;
+    justify-content: baseline;
+}
+.bannerPersonagem{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: #F2D6A2;
 }
